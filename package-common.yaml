@@ -1,0 +1,12 @@
+- &preamble
+  version:             0.1.0.0
+  github:              "githubuser/yaml-include-repro"
+  license:             BSD3
+  author:              "Author name here"
+  maintainer:          "example@example.com"
+  copyright:           "2019 Author name here"
+- &ghc-options
+  ghc-options: -v
+- &deps
+  dependencies:
+  - base >= 4.7 && < 5

@@ -1,0 +1,37 @@
+_include: !include '../package-common.yaml'
+
+<<: *preamble
+name:                yaml-include-repro
+description:         Please see the README on GitHub at <https://github.com/githubuser/yaml-include-repro#readme>
+
+<<: *ghc-options
+<<: *deps
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+library:
+  source-dirs: src
+
+executables:
+  yaml-include-repro-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - yaml-include-repro
+
+tests:
+  yaml-include-repro-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - yaml-include-repro
